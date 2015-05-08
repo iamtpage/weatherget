@@ -1,0 +1,84 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>WeatherGet!</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+		<!-- Javascript functions and stuff -->
+		<script src="js/main.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+  			<div class="container-fluid">
+    		<!-- Brand and toggle get grouped for better mobile display -->
+    			<div class="navbar-header">
+      				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        				<span class="sr-only">Toggle navigation</span>
+      				</button>
+      				<a class="navbar-brand" href="https://www.tpage.io">Home</a>
+    			</div>
+    		</div>
+    	</nav>
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div class="jumbotron well text-center">
+						<h1>
+							WeatherGet!
+						</h1>
+						<p>
+							This is a basic weather app that displays weather information using geo-location.
+						</p>
+						<p>
+							<p>
+								<a class="btn btn-primary btn-large" href="#" id="weather-alt" onclick="geolocate()">Current Weather</a>
+							</p>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+    	<div class="modal fade" id="weather" role="dialog">
+    		<div class="modal-dialog">
+    			<div class="modal-content">
+    				<form class="form-horizontal" role="form">
+    					<div class="modal-header">
+    						<h4>Current Weather Information (Forecast.io)</h4>
+						</div>
+	    				<div class="modal-body">
+    						<div class="form-group">
+    							<table class="table table-striped" id="weather-info">
+                					<thead>
+                  						<tr>
+                    						<th>Information</th>
+                  						</tr>
+                					</thead>
+                					<tbody>
+                					</tbody>
+              					</table>
+    						</div>
+						</div>
+	    				<div class="modal-footer" id="weather-foot">
+	    					<a class="btn btn-default" data-dismiss="modal" id="weather-close">Close</a>
+    					</div>
+					</form>
+				</div>
+    		</div>
+    	</div>
+        <script type="text/javascript">
+        $("#weather").on("hidden.bs.modal", function(){
+            $('#weather-info tbody').empty();
+        });
+        </script>
+	</body>
+</html>
